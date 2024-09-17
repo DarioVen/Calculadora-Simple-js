@@ -44,6 +44,8 @@ const obtenerOperadorValido = () => {
 // Obtener los números del usuario
 primerNumero = obtenerNumeroValido("Ingrese el primer número:");
 
+
+
 const realizarOperacion = () =>{
   siguienteNumero = obtenerNumeroValido("Ingrese el siguiente número");
   operador = obtenerOperadorValido ()
@@ -72,5 +74,18 @@ const realizarOperacion = () =>{
 
 // Llamar a la función para realizar la operación y mostrar el resultado
 
-const resultadoFinal = realizarOperacion();
+let resultadoFinal = realizarOperacion();
 alert("El resultado es: " + resultadoFinal);
+
+let continuar = confirm("¿Continuar con el cálculo?");
+
+if (continuar) {
+    do {
+        primerNumero = resultadoFinal;
+        resultadoFinal = realizarOperacion();
+        alert("El resultado es: " + resultadoFinal);
+        continuar = confirm("¿Continuar con el cálculo?");
+    } while (continuar);
+}
+
+
